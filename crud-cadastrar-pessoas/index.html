@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <title>Formulário de Cadastro de Pessoas</title>
+</head>
+
+<!-- 
+  Trabalho feito por: 
+  Juliano Freitas, 
+  Adauto Ferreira e 
+  Rene Cesar 
+  -->
+
+<body>
+
+  <!-- Barra de navegação -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+    <a class="navbar-brand" href="#">Cadastro de Pessoas</a>
+  </nav>
+
+  <!-- Container principal -->
+  <div class="container mt-5">
+    <h2 class="text-center">Formulário de Cadastro de Pessoas</h2>
+
+    <!-- Botão para adicionar nova pessoa -->
+    <button class="btn btn-dark mb-5 btn-lg" id="btnNovo">Cadastrar Nova Pessoa</button>
+
+    <!-- Formulário de cadastro -->
+    <form id="formulario" style="display: none;">
+      <!-- nome -->
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" class="form-control" id="nome" name="nome" required>
+        <div class="invalid-feedback">Este campo é obrigatório.</div>
+        <div class="valid-feedback">Valor válido!</div>
+      </div>
+      <!-- peso -->
+      <div class="form-group">
+        <label for="peso">Peso (kg):</label>
+        <input type="number" class="form-control" id="peso" name="peso" required>
+        <div class="invalid-feedback">Este campo é obrigatório.</div>
+        <div class="valid-feedback">Valor válido!</div>
+      </div>
+      <!-- idade -->
+      <div class="form-group">
+        <label for="idade">Idade:</label>
+        <input type="number" class="form-control" id="idade" name="idade" required>
+        <div class="invalid-feedback">Este campo é obrigatório.</div>
+        <div class="valid-feedback">Valor válido!</div>
+      </div>
+      <!-- Botões -->
+      <button type="button" class="btn btn-success" id="btnSalvar">Salvar</button>
+      <button type="button" class="btn btn-secondary" id="btnCancelar">Cancelar</button>
+    </form>
+
+    <!-- Listar pessoas cadastradas -->
+    <div class="mt-4" id="listaPessoas" style="display: none;">
+      <h3>Lista de Pessoas</h3>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Peso (kg)</th>
+            <th>Idade</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- Ícone de carregamento -->
+    <div id="loading" class="d-none text-center mt-3">
+      <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script para interatividade -->
+  <script src="script.js"></script>
+</body>
+
+</html>
